@@ -1,0 +1,25 @@
+{
+  "name": "rpt26-mvp",
+  "version": "1.0.0",
+  "description": "## Required Dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startNodemon": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonschreib/rpt26-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonschreib/rpt26-mvp/issues"
+  },
+  "homepage": "https://github.com/jasonschreib/rpt26-mvp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
