@@ -7,11 +7,12 @@ const port = 8000;
 
 app.use(express.static('client'));
 
+//allow parsing of the form message and adding it to req.body
+app.use(express.urlencoded());
 
 app.post('/addEntry', (req, res) => {
-  res.send('Hello world!');
+  res.send(req.body);
 });
-
 
 
 

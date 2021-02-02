@@ -4,8 +4,11 @@
 <head>
 <meta charset="utf-8">
 <title>Exercise Log</title>
-
-
+<style>
+h1, h2, .userInput {
+  text-align: center;
+}
+</style>
 </head>
 
 <body>
@@ -13,13 +16,13 @@
 
   <h2>Please enter all fields: Date, Time Spent, Yardage, and/or Notes</h2>
 
-  <form action="/addEntry" method="POST">
+  <form action="/addEntry" method="POST" class="userInput">
     <div>
       <label for="day">What day did you exercise?</label>
       <input type="date" name="day" id="day" required>
     </div>
     <div>
-      <label for="timeSpent">How long did you exercise?</label>
+      <label for="timeSpent">How long did you exercise(in minutes)?</label>
       <input type="number" name="timeSpent" id="timeSpent" required>
     </div>
     <div>
@@ -28,7 +31,7 @@
     </div>
     <div>
       <label for="notes">Got any notes about today's workout? Jot them down here...</label>
-      <textarea type="text" name="notes" id="notes">Write here!</textarea>
+      <textarea type="text" name="notes" id="notes" placeholder="Write here!"></textarea>
     </div>
     <div>
       <input type="submit" value="SUBMIT">
