@@ -6,13 +6,14 @@ const router = express.Router();
 
 router.post('/addEntry', (req, res, next) => {
   //upon post request, add the data to the database
-  Promise.resolve(db.create(req.body))
+  return db.create(req.body)
     //then read all the data from the database
     .then(() => db.readAll())
     //send the results in the response
     .then((results) => {
       console.log('RES', results);
-      res.send('Hey there, reached this');
+      res.send(results);
+      console.log('After res.send');
     })
     //required .catch for my promise chain
     .catch(() => {
