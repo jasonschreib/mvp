@@ -1,5 +1,7 @@
 //create server
 const express = require('express');
+const routes = require('./routes');
+
 const app = express();
 
 //establish a port
@@ -8,13 +10,10 @@ const port = 8000;
 app.use(express.static('client'));
 
 //allow parsing of the form message and adding it to req.body
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 
-app.post('/addEntry', (req, res) => {
-  res.send(req.body);
-});
-
-
+//use the router
+app.use(routes);
 
 
 //listen on this port
