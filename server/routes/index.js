@@ -23,6 +23,4 @@ router.post('/addEntry', (req, res, next) => {
 });
 
 
-
-
 module.exports = router;

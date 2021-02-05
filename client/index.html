@@ -16,7 +16,7 @@ h1, h2, .userInput {
 
   <h2>Please enter all fields: Date, Time Spent, Yardage, and/or Notes</h2>
 
-  <form action="/addEntry" method="POST" class="userInput">
+  <form class="userInput">
     <div>
       <label for="day">What day did you exercise?</label>
       <input type="date" name="day" id="day" required>
@@ -33,7 +33,7 @@ h1, h2, .userInput {
       <label for="notes">Got any notes about today's workout? Jot them down here...</label>
       <textarea type="text" name="notes" id="notes" placeholder="Write here!"></textarea>
     </div>
-    <div>
+    <div class="submitButton">
       <input type="submit" value="SUBMIT">
     </div>
   </form>
