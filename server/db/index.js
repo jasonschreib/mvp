@@ -22,11 +22,11 @@ var entryFunctions = {};
 
 ///add an entry to the database
 entryFunctions.create = (data) => {
-  console.log('DAY DATA', data.day);
+  console.log('DAY DATA', data);
   //return a new promise
   return new Promise((resolve, reject) => {
     //use the connection.query method to create a new entry
-    connection.query('INSERT INTO entries (day, TimeSpent, Yardage, Notes) VALUES (?, ?, ?, ?)', [data.day, data.timeSpent, data.yardage, data.notes], (err, results) => {
+    connection.query('INSERT INTO entries (day, time, yardage, notes) VALUES (?, ?, ?, ?)', [data.day, data.timeSpent, data.yardage, data.notes], (err, results) => {
       //err first callback
       if (err) {
         return reject(err);

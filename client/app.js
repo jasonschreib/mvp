@@ -33,7 +33,7 @@ var templateOnData = (data) => {
   }
   console.log('APPENDED', html)
   //append to the body
-  $('logTable').append(html);
+  $('#logTable').append(html);
 };
 
 //create html template for the response
@@ -42,9 +42,9 @@ var template = _.template(
     "<table>" +
       "<tr>" +
         "<td><%= day %></td>" +
-        "<td><%= TimeSpent %></td>" +
-        "<td><%= Yardage %></td>" +
-        "<td><%= Notes %></td>" +
+        "<td><%= time %></td>" +
+        "<td><%= yardage %></td>" +
+        "<td><%= notes %></td>" +
       "</tr>" +
     "</table>" +
   "</div>"
