@@ -2,16 +2,18 @@
 const express = require('express');
 const routes = require('./routes');
 
+const bodyparser = require('body-parser');
+
 const app = express();
 
 //establish a port
 const port = 8000;
 
-app.use(express.static('client'));
-
 //allow parsing of the form message and adding it to req.body
-app.use(express.urlencoded({extended: false}));
+app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.json());
 
+app.use(express.static('client'));
 
 //use the router
 app.use(routes);

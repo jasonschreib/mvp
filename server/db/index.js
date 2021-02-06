@@ -22,7 +22,7 @@ var entryFunctions = {};
 
 ///add an entry to the database
 entryFunctions.create = (data) => {
-  console.log('DAY DATA', data);
+  console.log('DATA', data);
   //return a new promise
   return new Promise((resolve, reject) => {
     //use the connection.query method to create a new entry
@@ -46,7 +46,7 @@ entryFunctions.readAll = () => {
       if (err) {
         return reject(err);
       }
-      console.log(results);
+      // console.log(results);
       return resolve(results);
     });
 
