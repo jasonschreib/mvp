@@ -1,11 +1,10 @@
-const $ = require('jquery');
 
 //Model
 
 //if the submit button is clicked, then trigger the post request
-function post(event) = {
+function post() {
+  console.log('This is the request');
   //prevent page from reloading
-  event.preventDefault();
   $.ajax({
     url: '/addEntry',
     type: 'POST',
@@ -15,13 +14,13 @@ function post(event) = {
       console.log('RESPONSE DATA in client ajax', responseData);
       //call the templating iteration function on the received data
       templateOnData(responseData);
-    }
+    },
     error: () => {
       console.log('There was an error - this in the client ajax method');
     }
   });
 };
-
+post();
 //View
 
 //create function to iterate over results array and apply templating to array -> table of data appears on screen
@@ -32,13 +31,14 @@ var templateOnData = (data) => {
     //add the template for each index to html var
     html += template(data[i]);
   }
+  console.log('APPENDED', html)
   //append to the body
-  document.body.appendChild(html);
+  $('logTable').append(html);
 };
 
 //create html template for the response
 var template = _.template(
-  "<div>" +
+  "<div class='entry'>" +
     "<table>" +
       "<tr>" +
         "<td><%= day %></td>" +
